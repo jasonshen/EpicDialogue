@@ -1,0 +1,34 @@
+body {
+	display: table;
+  height: 30000px;
+  font-size:3em;
+  font-family:Helvetica, sans-serif;
+  color:white;
+}
+
+#background{
+	position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    background-image: linear-gradient(
+          rgba(1, 5, 5, .65), 
+          rgba(1, 5, 5, .65)
+        ),url('../img/matrix.jpg');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    z-index: -1;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#fixed {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: 70%;
+}
+
