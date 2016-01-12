@@ -22,11 +22,20 @@ $(window).on('scroll', function() {
 */
 
 var counter = -1;
-var throttleScroll = _.debounce(animateText, 50);
+var throttleScroll = _.debounce(animateText, 100, [true]);
 $(window).scroll(throttleScroll);
 
 
 
+$(window).on("scroll", function() {
+  var scrollHeight = $(document).height();
+  var scrollPosition = $(window).scrollTop();
+  console.log("scrollHeight: " + scrollHeight + " scrollPos: " + scrollPosition);
+  if ((scrollHeight - scrollPosition) < 1200) {
+      var newHeight = $("body").height() + 3000;
+      $("body").css("height", newHeight);
+  }
+})
 
 function animateText() { 
   counter += 1;
