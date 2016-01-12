@@ -1,5 +1,6 @@
 $( document ).ready(function() {
 
+/*
 var lastFixPos = 0;
 var threshold = 1000;
 var counter = -1;
@@ -18,11 +19,18 @@ $(window).on('scroll', function() {
   }
 
 });
+*/
+
+var counter = -1;
+var throttleScroll = _.debounce(animateText, 50);
+$(window).scroll(throttleScroll);
 
 
 
-function animateText(phraseNum) {
-  var thePhrase = phrases(phraseNum);
+
+function animateText() { 
+  counter += 1;
+  var thePhrase = phrases(counter);
   $("#fixed").stop(true,true).html(thePhrase).addClass('animated fadeInDown').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
     $(this).stop(true,true).removeClass();
   });
